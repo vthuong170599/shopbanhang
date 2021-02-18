@@ -35,4 +35,24 @@ class HomeController extends Controller
         session()->pull('admin');
         return redirect()->route('admin.login');
     }
+
+    public function register(){
+        return view('admin.login.register');
+    }
+
+    public function signup(Request $request){
+        $check_email = admin::get_email($request->email);
+        if($check_email){
+            return redirect()->back()->with('err_email','email đã tồn tại');
+        }else{
+            $data = [
+                'email' => $request->email,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password)
+            ];
+            admin::create($data);
+            return redirect()->route('admin.login');
+        }
+    }
 }

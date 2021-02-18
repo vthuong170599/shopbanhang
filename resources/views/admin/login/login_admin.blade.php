@@ -85,7 +85,7 @@
                                     <a href="pages-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
                                 </div>
                                 <div class="col-sm-5 text-right">
-                                    <a href="pages-register.html" class="text-muted">Create an account</a>
+                                    <a href="{{route('admin.register')}}" class="text-muted">Create an account</a>
                                 </div>
                             </div>
                         </form>

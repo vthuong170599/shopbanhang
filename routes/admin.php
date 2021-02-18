@@ -18,6 +18,16 @@ Route::prefix('admin')->group(function(){
         'uses'=>'admins\HomeController@signin'
     ]);
 
+    Route::get('register-admin',[
+        'as'=>'admin.register',
+        'uses'=>'admins\HomeController@register'
+    ]);
+
+    Route::post('signup-admin',[
+        'as'=>'admin.signup',
+        'uses'=>'admins\HomeController@signup'
+    ]);
+
     Route::get('logout',[
         'as'=>'admin.logout',
         'uses'=>'admins\HomeController@logout'
